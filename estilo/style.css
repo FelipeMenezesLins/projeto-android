@@ -1,0 +1,194 @@
+@charset "UTF-8";  /*acentuação*/
+
+ @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');  /*isso serve para copiar e colocar uma fonte sem baixar*/
+
+ @font-face{  /*bem o nome é auto explicativo mas, isso serve para você que coloca fontes de outro sites, ou quer baixar alguma fonte e acaba colocando a que vc gostou*/
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format(opentype);
+    font-weight: normal;
+ }
+
+
+:root {  /*serve para criar varíaveis de css que ajuda muito na organização*/
+
+     /*toda varíavel com --, e tem a sua formula que é var(--cor01), exemplo, tendeu burro?*/
+    --font-destaque:'Lugrasimo', cursive, sans-serif;
+    --font-padrao:  arial, verdana,helvetica, sans-serif;
+    --font-android:'Android', cursive, sans-serif;
+    --cor0:#f1edc0;
+    --cor01:#83e1ad;
+    --cor02:#3ddc84;
+    --cor03:#2fa866;
+    --cor04:#1a5c37;
+    --cor05:#063d1e;
+}
+
+*{  /*serve para configurações globais*/
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+  background-color: #f1edc0;
+    font-family: var(--font-padrao);
+}
+
+header {
+    min-height: 150px;
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor05));
+    text-align: center;
+    padding-top: 30px;
+}
+
+header h1{
+    font-family:var(--font-padrao);
+    color: white;
+    margin-bottom: 20px;
+    font-size: 3em;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.486);  /*sobra no texto*/
+}
+header p {
+    color:white;
+    max-width: 600px;
+    margin:auto;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.486);
+    padding: 0px 20px 20px 20px
+}
+nav {  /*nav é o menu*/
+    background-color:var(--cor05);
+    padding:10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.11);
+}
+
+nav a {
+    color: var(--cor01);
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bolder;
+    transition-duration: .5s;  /*duração de segundos ou milisegundos para uma transição*/
+}
+
+nav a:hover {
+    background-color:var(--cor03);
+    color: var(--cor05);
+    border-radius: 5px;
+}
+
+main h1{
+ font-family:var(--font-android);
+ color: var(--cor05);
+}
+
+main h2{
+    font-family:var(--font-android);
+    color: var(--cor04);
+    font-size: 1.3em;
+    background-image:linear-gradient(to right, var(--cor01), transparent);  /*serve para deixar transparente*/
+    padding-left: 10px;
+}
+
+main p {
+text-indent: 30px;  /*espaço para paragrafo*/
+margin:15px 0px;
+line-height: 2em;  /*espaço entre linhas*/
+font-size: 1em; /*tamanho da fonte*/
+text-align: justify;  /*deixa justisficado*/
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bolder;  /*Escolhe o tipo da fonte negrito, italic, se tiver a fonte*/
+    color: var(--cor05);
+    background-color: var(--cor02);
+    margin: 0px 5px;
+}
+
+main a:hover {  /*hover deixa colorido depende da sua configuração, serve pra deixar o link bonito*/
+    text-decoration: underline;
+    color: var(--cor04);
+}
+
+a.external::after {  /*after é depois, é um pseudo elemento*/
+content: '\1F517';  /*content é o conteúdo serve para colocar emoji como mostra o exemplo*/
+}
+
+main strong {  /*configurações das palavras que estão em negrito*/
+    color: var(--cor04);
+    padding: 0px;
+    margin: 0px 5px;
+}
+
+main {
+background-color:white;
+font-family:var(--font-padrao);
+min-width: 320px;  /*largura minima de 320 px*/
+max-width: 1000px;  /*largura máxima de até 1000px*/
+margin:auto;
+padding: 20px;  /*separa o conteudo da borda*/
+box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.438);  /*sombra na caixa onde tem o conteúdo*/
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+main img {
+    width: 100%;  /*largura da imagem de acordo com a tela*/
+}
+.pequena {
+    max-width: 350px;  /*largura máxima da imagem*/
+    display: block;  /*transforma em bloco em uma box level*/
+    margin: auto;  /*centraliza conteúdos box level*/
+}
+
+div.video {
+    background-color: var(--cor04);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 56%;  /**/
+    position: relative;  /**/
+}
+
+div.video>iframe {
+    position: absolute;  /**/
+    top: 5%;
+    left: 5%;
+    width: 90%; /**/
+    height: 90%;  /**/
+}
+aside {  /**/
+    background-color: var(--cor01);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+aside>h3 {
+    background-color: var(--cor04);
+    margin: -10px -10px 0px -10px;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+}
+
+
+aside>ul {
+    list-style-position: inside; /*serve para colocar as bolinhas da lista dentro do conteúdo*/
+    list-style-type: '\2714\00A0\00A0';/*serve para o estilo das bolinhas das listas, coloca o código do emoji e 00A0 serve para da espaço*/
+    columns: 2; /**/
+}
+
+footer p {
+    background-color: var(--cor05);
+    margin: 20px 0px 0px 0px;
+    text-align:center;
+    padding: 10px;
+}
+
+footer a{
+color: white;
+text-decoration: none; /*none tira a decoração*/
+}
+
+footer a:hover {
+    color: var(--cor02);
+    text-decoration: underline; /*serve para sumblinhar*/
+}
+
